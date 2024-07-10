@@ -1,10 +1,10 @@
 import { FastifyInstance } from "fastify";
 import { ZodTypeProvider } from "fastify-type-provider-zod";
-import z from "zod";
-import { prisma } from "../lib/prisma";
-import { getMailCLient } from "../lib/mail";
 import nodemailer from 'nodemailer';
-import { dayjs } from '../lib/dayjs'
+import z from "zod";
+import { dayjs } from '../lib/dayjs';
+import { getMailCLient } from "../lib/mail";
+import { prisma } from "../lib/prisma";
 
 export async function createTrip(app: FastifyInstance) {
     app.withTypeProvider<ZodTypeProvider>().post('/trips', {
@@ -76,7 +76,7 @@ export async function createTrip(app: FastifyInstance) {
                 <p>Para confirmar sua viagem, clique no link abaixo:</p>
                 <p></p>
                 <p>
-                <a href="${confirmationLink}">Confirmar viagem</a>
+                    <a href="${confirmationLink}">Confirmar viagem</a>
                 </p>
                 <p></p>
                 <p>Caso você não saiba do que se trata esse e-mail, apenas ignore esse e-mail.</p>
