@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 
-export async function getMailCLient() {
+export async function getMailClient() {
     const account = await nodemailer.createTestAccount()
 
     const transporter = nodemailer.createTransport({
